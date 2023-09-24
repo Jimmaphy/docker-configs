@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  node:
+    image: node:latest
+    volumes:
+      - .:/app
+      - ./node_modules/:/app/node_modules
+    working_dir: /app
+    entrypoint: bash -c "npm install && node ./src/app.js"
